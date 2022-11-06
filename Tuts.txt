@@ -1,0 +1,68 @@
+Q. What is Redux?
+Redux is a state container for JavaScript apps. Redux helps in state management by storing all the states which needs to be 
+changed through out the app in one place, which we usually call it as ‘store’ or redux store’.
+It is most commonly paired with React, where it takes control of state away from React components and 
+gives it to a centralised place called a ‘store’.
+
+Consider the following diagram: Follow the links for diagram: https://miro.medium.com/max/1100/1*A4aekTEykxIdS9oLPtLH_w.png
+                                                              https://miro.medium.com/max/1100/1*2r3KY9vBtUBXXEQMl0Iiog.png
+
+The left diagram represents a regular React app without Redux. Each circle represents a component.
+
+When a component initiates a change (the blue circle), this change is communicated to the other components one step at a time. 
+This may seem simple enough when we only have 10 components, but what about an app with 20, 50 or 100 components? 
+As an app becomes larger, debugging can quickly become tricky, as we lose sight of how information is passed from one 
+component to another.
+
+On the right is the same React app with Redux. This time, when a component initiates a change, that information goes straight 
+from it (the blue circle) to our store (the green circle). From there, the change is then communicated directly to all the 
+components that need to update.
+
+Redux, therefore, makes it much easier to diagnose problems: a problem will either be in the component that initiated the change 
+(the blue circle) or in the code related to Redux itself.
+
+** Disadvantages of using redux: 
+Redux comes with a lot of boilerplate. We should follow it properly otherwise our appliction may behave inappropriately.
+
+
+** Redux Flow : With this flow we can understand the working of redux easily.
+Follow link for diagram : https://miro.medium.com/max/1400/1*Pev6ubOxh74kOwh_fbEwVg.png
+Step 1: UI (User Interface)
+This is where a change is triggered. For example, a user clicking a ‘+’ button in a simple counter app.
+
+Step 2: Actions
+The actual action we want to take place, for example, “add one”.
+In Redux, actions are plain JavaScript objects, and they must have a type property (e.g. 'ADD_ONE' ).
+These actions will be dispatched to the reducer and according to that reducer will perform state management accessing the store.
+
+Step 3: Reducer
+These specify how the application’s state should change in response to each action. It is something which makes changes to the the State
+object according to the action in the Store, to be reflected in the View. 
+For example, our new state should be one integer higher than our old state.
+
+Step 4A: Store
+The store brings everything together. It holds application state
+
+Step 4B: State
+Finally, state is contained within the store. Store basically keeps all our state management data in one place
+
+
+Now let's see how we can start writing the implementation for redux and and how will the folder structure be: 
+
+Here we have created one folder 'state' inside our src folder. In this 'state' folder we'll be keeping our 'action-creators',
+'reducers' and 'redux-store' 
+So for this inside 'state' folder we have: 
+=> 'action-creatorx' folder inside which we have:
+    -> 'index.js' fie were we have defined our action creators.
+=> 'reducers' folder  inside which we have: 
+    -> 'amountReducers.js' file where we are creating our reducer 'amountReducer'
+    -> 'index.js' file where we are combining all the reducers into one and expoting it as a single reducer 
+    Note: We can create more reducers like 'amountReducer' in single or multiple files here and finally we can combine them inside
+          this index.js file into a single reducer(This combining into one reducer is optional - we are doing here fore easiness and clear code)
+=> reduxStore.js file where we have created our 'redux-store'
+
+Note: Here we have oraganized our code in the above way. It can be done in some other way as per convenience  
+
+
+
+
