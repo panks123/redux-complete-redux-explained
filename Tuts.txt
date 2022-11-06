@@ -63,6 +63,11 @@ So for this inside 'state' folder we have:
 
 Note: Here we have oraganized our code in the above way. It can be done in some other way as per convenience  
 
-
-
-
+Now, all the setup for the redux is done.
+Now let's see how we can access the redux store's state from anywhere in our application:
+=> We do it using useSelector hook.
+=> useSelector is a part of 'react-redux' library and hook is used to access the redux store's state. This hook takes a selector function as argument that returns the part of the state that we want.
+ 
+Now, let's see how we can dispatch actions from anywhere in our app in UI to change the state of the store.
+=> For this we'll be using 'useDispatch' hook from 'react-redux' library.
+=> See the files src/components/Shop.js to understand it.
